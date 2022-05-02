@@ -7,6 +7,7 @@ import {
   useGetRelatedNewsQuery,
 } from "../../services/stocksApi";
 import Loader from "../Loader/Loader";
+import fallBackImage from "../../assets/seeking-alpha.png";
 
 const NewsList = ({ count }) => {
   const [searchParams] = useSearchParams();
@@ -47,7 +48,7 @@ const NewsList = ({ count }) => {
             </div>
             <Link to={`/news/${id}`}>
               <img
-                src={gettyImageUrl ? gettyImageUrl : "./seeking-alpha.png"}
+                src={gettyImageUrl ? gettyImageUrl : fallBackImage}
                 alt="news coverPhoto"
                 width="100px"
                 height="100px"

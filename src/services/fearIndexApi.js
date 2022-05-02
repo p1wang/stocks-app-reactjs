@@ -11,7 +11,7 @@ const createRequest = (url) => ({
 export const fearIndexApi = createApi({
   reducerPath: "fearIndexApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_NEWS_API_URL,
+    baseUrl: process.env.REACT_APP_FEAR_INDEX_API_URL,
   }),
   endpoints: (builder) => ({
     getFearIndex: builder.query({
