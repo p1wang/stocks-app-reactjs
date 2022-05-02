@@ -3,15 +3,15 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const createRequest = (url) => ({
   url,
   headers: {
-    "X-RapidAPI-Host": "seeking-alpha.p.rapidapi.com",
-    "X-RapidAPI-Key": "cb3609953fmsh48d94247caad89ap1be71cjsn2f50124cf018",
+    "X-RapidAPI-Host": process.env.REACT_APP_NEWS_API_HOST,
+    "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
   },
 });
 
 export const stocksApi = createApi({
   reducerPath: "stocksApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://seeking-alpha.p.rapidapi.com",
+    baseUrl: process.env.REACT_APP_NEWS_API_URL,
   }),
   endpoints: (builder) => ({
     getNews: builder.query({

@@ -10,6 +10,8 @@ import NewsPage from "./pages/NewsPage/NewsPage";
 import StockDetailsPage from "./pages/StockDetailsPage/StockDetailsPage";
 import StocksPage from "./pages/StocksPage/StocksPage";
 
+console.log(process.env.REACT_APP_RAPIDAPI_KEY);
+
 function App() {
   return (
     <Layout>
