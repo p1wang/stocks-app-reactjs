@@ -1,0 +1,49 @@
+import millify from "millify";
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  useGetCurrentPriceQuery,
+  useGetStocksQuery,
+} from "../../services/stocksApi";
+
+import styles from "./PopularStocks.module.css";
+import { getTextClassName } from "../../utils/getTextClassName";
+
+const PopularStocks = () => {
+  const { data } = useGetStocksQuery();
+
+  let slugsList = data?.data?.attributes?.most_active.map((item) => {
+    return item.slug;
+  });
+
+  const { data: realTimePrice } = useGetCurrentPriceQuery({
+    symbols: slugsList,
+  });
+
+  return (
+    <div className={styles["popular-stocks-container"]}>
+      {realTimePrice?.data.map(
+        ({ id, attributes: { name, last, percentChange } }) => (
+          <Link
+            to={`/quote/${id}`}
+            key={id}
+            className={styles["card-container"]}
+          >
+            <span>
+              <h3>{id}</h3>
+              <h4>{name}</h4>
+            </span>
+            <span>
+              <p>{last}</p>
+              <p
+                className={styles[getTextClassName(percentChange)]}
+              >{`${millify(percentChange)}%`}</p>
+            </span>
+          </Link>
+        )
+      )}
+    </div>
+  );
+};
+
+export default PopularStocks;

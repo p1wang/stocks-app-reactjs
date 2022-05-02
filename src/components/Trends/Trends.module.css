@@ -1,0 +1,19 @@
+.trends-container {
+  padding: 1rem;
+}
+
+.trends-container h2 {
+  margin-bottom: 1rem;
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* @media screen and (max-width: 480px) {
+  .trends-container {
+    width: 100%;
+  }
+} */

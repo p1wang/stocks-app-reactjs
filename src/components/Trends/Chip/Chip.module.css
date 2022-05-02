@@ -1,0 +1,15 @@
+.chip-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+.chip-container:hover {
+  background-color: #f9f9fa;
+}
+
+.chip-link {
+  text-decoration: none;
+  color: black;
+}

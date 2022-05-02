@@ -1,0 +1,27 @@
+.period-selection-container {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.period-select-btn {
+  outline: 0;
+  padding: 0;
+  border: 0;
+  background-color: white;
+  font-weight: 100;
+}
+
+.period-select-btn:hover {
+  color: #3db2ff;
+}
+
+.period-select-btn.active {
+  color: #3db2ff;
+  font-size: 1rem;
+}
+
+.error-msg {
+  text-align: center;
+}

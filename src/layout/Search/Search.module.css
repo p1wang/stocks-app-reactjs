@@ -1,0 +1,17 @@
+.search-container {
+  width: 80vw;
+  max-width: 1248px;
+  border: 1px solid black;
+  border-color: black;
+  padding: 1rem;
+  margin: 5rem auto 3rem;
+  display: flex;
+  border-radius: 5px;
+}
+
+.search-container input {
+  flex: 1;
+  font-size: 1rem;
+  border: none;
+  outline: 0;
+}

@@ -1,0 +1,39 @@
+.news-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.news-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  color: black;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  /* margin: auto; */
+}
+
+.news-item-container:first-child {
+  border-top: 1px solid black;
+}
+
+.read-more {
+  text-align: center;
+}
+
+.error-msg {
+  text-align: center;
+}
+
+.news-thumbnail {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.news-title {
+  color: black;
+  text-decoration: none;
+}

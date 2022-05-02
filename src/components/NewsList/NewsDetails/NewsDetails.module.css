@@ -1,0 +1,22 @@
+.news-article {
+  font-weight: 300;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* .news-article li {
+  list-style: none;
+} */
+
+.news-details h1 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.news-details img {
+  max-width: 100%;
+  margin-bottom: 2rem;
+  height: auto;
+  display: block;
+  margin: 2rem auto 5rem;
+}

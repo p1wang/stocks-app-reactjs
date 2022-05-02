@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+
+import "./App.css";
+import Layout from "./layout/Layout";
+import CategorizedStocksPage from "./pages/CategorizedStocksPage/CategorizedStocksPage";
+import FearIndexPage from "./pages/FearIndexPage/FearIndexPage";
+import HomePage from "./pages/HomePage/HomePage";
+import NewsDetailsPage from "./pages/NewsDetailsPage/NewsDetailsPage";
+import NewsPage from "./pages/NewsPage/NewsPage";
+import StockDetailsPage from "./pages/StockDetailsPage/StockDetailsPage";
+import StocksPage from "./pages/StocksPage/StocksPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/stocks" element={<StocksPage />} />
+        <Route path="/stocks/:id" element={<CategorizedStocksPage />} />
+        <Route path="/fearindex" element={<FearIndexPage />} />
+        <Route path="/quote/:id" element={<StockDetailsPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/:id" element={<NewsDetailsPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Layout>
   );
 }
 
