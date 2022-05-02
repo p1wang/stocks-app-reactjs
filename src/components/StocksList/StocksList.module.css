@@ -4,6 +4,8 @@
 
 .stocks-list-container table {
   margin: 2rem auto;
+  max-width: 700px;
+  width: 80%;
 }
 
 .stock-container td {

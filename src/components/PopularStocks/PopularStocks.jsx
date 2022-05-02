@@ -29,11 +29,11 @@ const PopularStocks = () => {
             key={id}
             className={styles["card-container"]}
           >
-            <span>
+            <span className={styles["titles"]}>
               <h3>{id}</h3>
               <h4>{name}</h4>
             </span>
-            <span>
+            <span className={styles["price-change"]}>
               <p>{last}</p>
               <p
                 className={styles[getTextClassName(percentChange)]}

@@ -9,16 +9,17 @@
 .card-container {
   min-width: 230px;
   max-width: 230px;
-  height: 120px;
+  height: 125px;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 1rem;
+  /* padding: 1rem; */
   /* margin: 1rem; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
   color: black;
+  position: relative;
 }
 
 .card-container span:nth-child(2) {
@@ -29,6 +30,25 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
+.price-change {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+
+.titles {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.titles h3 {
+  font-size: 1.5rem;
+}
+
+.titles h4 {
+  font-weight: 400;
+}
 .positive {
   color: green;
 }
