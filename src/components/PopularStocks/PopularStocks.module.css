@@ -61,7 +61,13 @@
   color: black;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
+  .popular-stocks-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .popular-stocks-container {
     justify-content: center;
   }
