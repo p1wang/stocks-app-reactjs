@@ -1,16 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const [showDropDownMenu, setShowDropDownMenu] = useState(false);
+
+  const handleOnBurgerClick = () => {
+    setShowDropDownMenu(!showDropDownMenu);
+  };
+
+  const handleLinkOnClick = () => {
+    setShowDropDownMenu(false);
+  };
+
   return (
     <header className={styles["nav-container"]}>
-      <nav className={styles["nav-list"]}>
-        <Link to="/">Home</Link>
-        <Link to="/news">News</Link>
-        <Link to="/stocks">Stocks</Link>
-        <Link to="/fearindex">Fear&Greed</Link>
+      {showDropDownMenu ? (
+        <AiFillCloseCircle
+          className={styles["burger"]}
+          onClick={handleOnBurgerClick}
+        />
+      ) : (
+        <GiHamburgerMenu
+          className={styles["burger"]}
+          onClick={handleOnBurgerClick}
+        />
+      )}
+
+      <nav
+        className={
+          showDropDownMenu
+            ? `${styles["nav-list"]} ${styles["active"]}`
+            : styles["nav-list"]
+        }
+      >
+        <Link to="/" onClick={handleLinkOnClick}>
+          Home
+        </Link>
+        <Link to="/news" onClick={handleLinkOnClick}>
+          News
+        </Link>
+        <Link to="/stocks" onClick={handleLinkOnClick}>
+          Stocks
+        </Link>
       </nav>
     </header>
   );

@@ -10,7 +10,7 @@ const FearIndex = () => {
   let fearIndexValue = data?.fgi?.now?.value;
 
   const convertToWords = () => {
-    if (data?.fgi?.now?.value <= 25) {
+    if (fearIndexValue <= 25) {
       return "Extreme Fear";
     } else if (fearIndexValue > 25 && fearIndexValue < 50) {
       return "Fear";
@@ -25,21 +25,13 @@ const FearIndex = () => {
 
   const state = {
     labels: ["Extreme Fear", "Fear", "Neutral", "Greed", "Extreme Greed"],
-    // labels: ["Extreme Fear", "Extreme Greed"],
 
     labels: { render: "percentage" },
 
     datasets: [
       {
-        backgroundColor: [
-          "#db765a",
-          "#e49e64",
-          "#e7db6a",
-          "#b0e468",
-          "#7bd95e",
-        ],
-        // data: [data?.fgi?.now?.value, 100 - data?.fgi?.now?.value],
-        data: [20, 20, 20, 20, 20],
+        backgroundColor: ["#7bd95e", "#db765a"],
+        data: [fearIndexValue, 100 - fearIndexValue],
       },
     ],
     text: "20",

@@ -12,7 +12,7 @@ const StocksPage = () => {
   if (isFetching) return <Loader />;
 
   return (
-    <div className={styles["stocks-list-container"]}>
+    <>
       <StocksList
         data={allCategories?.top_gainers}
         stocksListTitle={"Top Gainers"}
@@ -25,7 +25,7 @@ const StocksPage = () => {
         data={allCategories?.cryptocurrencies}
         stocksListTitle={"Top Cryptos"}
       />
-    </div>
+    </>
   );
 };
 

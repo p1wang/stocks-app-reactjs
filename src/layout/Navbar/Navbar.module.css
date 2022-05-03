@@ -18,6 +18,32 @@
   color: white;
 }
 
-.nav-container a:first-child {
+.nav-container a:nth-child(1) {
   flex: 1;
+}
+
+.burger {
+  color: white;
+  font-size: 2rem;
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .nav-list {
+    display: none;
+  }
+  .nav-list.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-container {
+    padding: 0.5rem;
+  }
 }
