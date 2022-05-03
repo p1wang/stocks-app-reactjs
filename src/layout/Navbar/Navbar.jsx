@@ -33,8 +33,8 @@ const Navbar = () => {
       <nav
         className={
           showDropDownMenu
-            ? `${styles["nav-list"]} ${styles["active"]}`
-            : styles["nav-list"]
+            ? styles["nav-list"]
+            : `${styles["nav-list"]} ${styles["closed"]}`
         }
       >
         <Link to="/" onClick={handleLinkOnClick}>
