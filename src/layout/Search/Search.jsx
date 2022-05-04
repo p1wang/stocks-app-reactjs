@@ -24,12 +24,19 @@ const Search = () => {
     matchFearIndexRoute && navigate(`/quote/${searchTerm}`);
   };
 
+  const handleOnEnterKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleOnClick();
+    }
+  };
+
   return (
     <div className={styles["search-container"]}>
       <input
         type="text"
         placeholder="Search for a stock/crypto symbol"
         value={searchTerm}
+        onKeyPress={handleOnEnterKeyPress}
         onChange={(e) => {
           setSearchTerm(e.target.value);
         }}
