@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 import { useParams } from "react-router-dom";
 import { useGetNewsDetailsQuery } from "../../../services/stocksApi";
 import Loader from "../../Loader/Loader";
@@ -18,7 +19,8 @@ const NewsDetails = () => {
   return (
     <div className={styles["news-details"]}>
       <h1>{newsData.title}</h1>
-      <span>{`Published on: ${newsData.publishOn}`}</span>
+      <span>Published on: </span>
+      <Moment>{newsData.publishOn}</Moment>
 
       <div
         className={styles["news-article"]}

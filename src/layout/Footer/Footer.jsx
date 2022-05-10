@@ -11,6 +11,7 @@ const Footer = () => {
         <img
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
           width="50px"
+          alt="company-logo"
         />
 
         {links.map((item) => (
