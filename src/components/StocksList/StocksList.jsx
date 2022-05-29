@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const StocksList = ({ data, stocksListTitle }) => {
     symbols: categoryTopStocks,
   });
 
-  // if (isFetching) return <Loader />;
+  if (isFetching) return <Loader />;
 
   return (
     <div className={styles["stocks-list-container"]}>

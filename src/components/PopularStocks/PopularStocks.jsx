@@ -5,24 +5,28 @@ import {
   useGetCurrentPriceQuery,
   useGetStocksQuery,
 } from "../../services/stocksApi";
+import Loader from "../Loader/Loader";
 
 import styles from "./PopularStocks.module.css";
 import { getTextClassName } from "../../utils/getTextClassName";
 
 const PopularStocks = () => {
-  const { data } = useGetStocksQuery();
+  const { data, isFetching } = useGetStocksQuery();
 
   let slugsList = data?.data?.attributes?.most_active.map((item) => {
     return item.slug;
   });
 
-  const { data: realTimePrice } = useGetCurrentPriceQuery({
-    symbols: slugsList,
-  });
+  const { data: realTimePrice, isFetching: realTimePriceIsLoading } =
+    useGetCurrentPriceQuery({
+      symbols: slugsList,
+    });
+
+  if (isFetching || realTimePriceIsLoading) return <Loader />;
 
   return (
     <div className={styles["popular-stocks-container"]}>
-      {realTimePrice?.data.map(
+      {realTimePrice?.data?.map(
         ({ id, attributes: { name, last, percentChange } }) => (
           <Link
             to={`/quote/${id}`}

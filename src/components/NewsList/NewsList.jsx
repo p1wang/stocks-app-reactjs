@@ -13,15 +13,16 @@ const NewsList = ({ count }) => {
   const [searchParams] = useSearchParams();
   const [news, setNews] = useState();
 
-  const { data: topNews, isFetchingTopNews } = useGetNewsQuery({
+  const { data: topNews, isFetching: isFetchingTopNews } = useGetNewsQuery({
     category: "market-news::top-news",
     size: 10,
   });
 
-  const { data: newsById, isFetchingRelatedNews } = useGetRelatedNewsQuery({
-    id: searchParams.get("search") ? searchParams.get("search") : "aapl",
-    size: 10,
-  });
+  const { data: newsById, isFetching: isFetchingRelatedNews } =
+    useGetRelatedNewsQuery({
+      id: searchParams.get("search") ? searchParams.get("search") : "aapl",
+      size: 10,
+    });
 
   useEffect(() => {
     searchParams.get("search")
