@@ -3,9 +3,10 @@ import { Doughnut } from "react-chartjs-2";
 import { useGetFearIndexQuery } from "../../services/fearIndexApi";
 
 import styles from "./FearIndex.module.css";
+import Loader from "../Loader/Loader";
 
 const FearIndex = () => {
-  const { data } = useGetFearIndexQuery();
+  const { data, isFetching } = useGetFearIndexQuery();
 
   let fearIndexValue = data?.fgi?.now?.value;
 
@@ -54,6 +55,8 @@ const FearIndex = () => {
       },
     },
   };
+
+  if (isFetching) return <Loader />;
 
   return (
     <div className={styles["fear-index-container"]}>

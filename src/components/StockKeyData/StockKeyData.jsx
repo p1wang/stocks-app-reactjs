@@ -50,7 +50,7 @@ const StockKeyData = () => {
     stockData.push(["Total Revenue", totalRevenue]);
   }
 
-  // if (isFetching) return <Loader />;
+  if (isFetching) return <Loader />;
 
   return data?.errors ? (
     <></>
